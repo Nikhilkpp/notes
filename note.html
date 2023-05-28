@@ -1,1 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 1.055rem;
+        }
+        body{
+            font-family: inherit;
+            line-height: normal;
+        }
+        
+        
+        .nav_box{
+            display: flex;
+        }
+        .nav_box ul{
+            display: flex;
+            list-style: none;
+        }
+        .nav_box ul li{
+            display: flex;
+            list-style: none;
+            padding: 5px 14px;
+        }
+        .nav_box ul li a{
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.489);
+            padding: 10px 1px;
+        
+        
+        }
+        .navbar::before{
+            content: "";
+            background-color: rgb(56 58 66);
+            opacity: 1;
+            height: 52px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -111;
+            display: flex;
+        }
+        #nav_box1{
+        
+            justify-content: center;
+            width: 74%;
+        }
+        #nav_box2{
+            width: 26%;
+            right: 0;
+            top: 0;
+        }
+        #nav_box1 img{
+            height: 50px;
+            border-radius: 50px;
+        }
+        .navigation_btns{
+            margin-left: 5px;
+        }
+        .navbar a:hover{
+            color: red;
+            font-size: 1.059rem;
+           
+            transform:scale(1.09,1.1) ;
+            
+        }
+        .navbar a{
+            transition: 1s;
+        
+        
+        }
+        
+        
+        :root {
+            --grad1: #00ccff;
+            --grad2: #0e1538;
+            --grad3: #d400d4;
+        }
+        .navbar{
+            color:white;
+        }
+
+        body {
+            background: rgb(41 32 32);
+        }
+
+        .box {
+            /* border: .5px solid #ccc; */
+            box-shadow: 1px 2px 2px;
+            width: fit-content;
+            margin: 20px auto;
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .bts {
+            /* position: absolute; */
+            /* bottom: -18px; */
+            /* left: 2px; */
+            border-radius: 5px;
+            outline: none;
+            border: .25px solid;
+            margin: 2px 0px 0px 3px;
+
+            padding: 2px 3px;
+            font-size: 17px;
+            font-family: 'Anton', sans-serif;
+            background-color: rgb(98 69 75);
+
+            color: #ccc;
+            transition: .5s;
+            /* left: 20; */
+            /* margin-left: 10px; */
+        }
+
+        #btns {
+            display: flex;
+            /* flex-direction: column; */
+            width: 100%;
+            /* border: 2px solid salmon; */
+            justify-content: space-between;
+
+        }
+
+        #submit {
+            /* align-self: flex-start; */
+        }
+
+
+
+        #textaarea:focus {
+            outline: none;
+            /* padding: 0px; */
+            margin: 0px;
+        }
+
+        .bts:hover {
+            background-color: #ccc;
+            color: rgb(32, 32, 230);
+        }
+
+        #nothing {
+            color: rgba(119, 159, 159, 0.546);
+        }
+
+        h4 {
+            color: aquamarine;
+            text-align: center;
+        }
+
+        #notes_area {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        #notes_area>* {
+            /* border: 3px solid rgb(165, 204, 165); */
+            /* margin: 2px 5%; */
+            text-align: center;
+        }
+
+        .abcd {
+            margin-top: 25px;
+        }
+
+        .dels {
+            margin-bottom: 0%;
+            font-size: 17px;
+            font-family: 'Anton', sans-serif;
+            background-color: rgb(32, 32, 230);
+            color: #ccc;
+            transition: .5s;
+        }
+
+        .dels:hover {
+            background-color: #ccc;
+            color: rgb(32, 32, 230);
+        }
+
+
+
+        .design {
+            position: relative;
+            border-radius: 0px;
+            color: white;
+            background: #000;
+        }
+
+        /*SKEWED EFFECT*/
+        .design::before,
+        .design::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            -webkit-transform: skewX(2deg) skewY(4deg);
+            transform: skewX(2deg) skewY(4deg);
+            background: -webkit-linear-gradient(135deg, var(--grad1), var(--grad2), var(--grad3));
+            background: linear-gradient(315deg, var(--grad1), var(--grad2), var(--grad3));
+            z-index: -9999;
+        }
+
+        /*BLUR EFFECT*/
+        .design::after {
+            -webkit-filter: blur(50px);
+            filter: blur(50px);
+
+        }
+
+        /*HOVER EFFECT*/
+        .design:hover::before,
+        .design:hover::after {
+            background: -webkit-linear-gradient(315deg, var(--grad1), var(--grad2), var(--grad3));
+            background: linear-gradient(135deg, var(--grad1), var(--grad2), var(--grad3));
+        }
+
+        hr {
+            border-top: 2px solid gray ;
+
+            color: gray;
+            height: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">NotesApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+                </ul>
+                <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- <hr style="height:1px;border:none;color:#333;background-color:#333;" /> -->
+
+    <div class="box">
+        <h4>Add your note here:</h4>
+
+        <textarea autofocus name="" id="textaarea" cols="60" rows="5" placeholder="write here..."></textarea>
+        <!-- <br> -->
+        <div id="btns">
+            <button class="bts" id="submit">Add Note</button>
+            <button class="bts" id="clear">Clear All</button>
+            <button onclick="showOrHide()" class="bts" id="show">Hide All</button>
+        </div>
+    </div>
+    <div id="notes_area"></div>
+
+</body>
+<script>
+    shownotes();
+    let submit_btn = document.getElementById("submit");
+    let clear_btn = document.getElementById("clear");
+    clear_btn.addEventListener("click", function () {
+        let x = confirm("Are you sure to delete all the notes ?");
+        if (x == true) {
+            localStorage.clear();
+            shownotes();
+        }
+    })
+
+    submit_btn.addEventListener("click", function (e) {
+
+        let textarea = document.getElementById("textaarea");
+
+        let textarea_val = textarea.value;
+        let notes = localStorage.getItem("notes");
+        if (notes == null) {
+            notesObj = [];
+
+        } else {
+            notesObj = JSON.parse(notes);
+        }
+
+        notesObj.push(textarea.value);
+        localStorage.setItem("notes", JSON.stringify(notesObj));
+        textarea.value = " ";
+        console.log(notesObj);
+        shownotes();
+    })
+    var u = 0;
+    // var q=0;
+    function shownotes() {
+        // alert("It is loading");
+        let notes = localStorage.getItem("notes");
+        if (notes == null) {
+            notesObj = [];
+
+        } else {
+            notesObj = JSON.parse(notes);
+
+        }
+        let xyz = "";
+        notesObj.forEach(function (item, index) {
+            xyz += `
+
+            <div class="card  abcd" style="width: 18rem;">
+                <div class="card-body design">
+                    <h5 class="card-title">Note ${index + 1}</h5>
+                    <p class="card-text">${item}</p>
+                    <a onclick="del_activity(this.id)" class="btn  dels btn-primary" id="${index}">Delete</a>
+                </div>
+             </div>
+            
+            `
+        });
+        let notesElm = document.getElementById('notes_area');
+        if (notesObj.length == 0) {
+
+            notesElm.innerHTML = `<h1 id="nothing" style="margin-top:25px;"> <b> <q><em>Nothing to show here yet. </em></q> </b></h1>`;
+            // notesElm.innerText.style.textAlign="center";
+        }
+        else {
+            notesElm.innerHTML = xyz;
+            console.log(notes);
+
+        }       // notesObj.forEach(function(item, index){
+    }
+    function showOrHide() {
+        if (u == 0) {
+            u++;
+            document.getElementById("show").innerText = "Show All";
+            document.getElementById('notes_area').style.visibility = "hidden";
+
+
+        }
+
+        else {
+            document.getElementById("show").innerText = "Hide All";
+            document.getElementById('notes_area').style.visibility = "visible";
+
+
+            u--;
+        }
+    }
+    function del_activity(index) {
+        let notes = localStorage.getItem("notes");
+        if (notes == null) {
+            notesObj = [];
+
+        } else {
+            notesObj = JSON.parse(notes);
+
+        }
+        notesObj.splice(index,1);
+        localStorage.setItem("notes", JSON.stringify(notesObj));
+        shownotes();
+               
+           console.log("I'm deleting node",index);
+
+    }
+</script>
+
+</html>
